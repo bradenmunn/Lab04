@@ -53,10 +53,16 @@ public class AnimalTest
     	Animal animal5 = new Animal("green", "bruce", 25.0, 79.4);
     	Animal animal6 = new Animal();
     	Animal animal7 = new Animal();
+    	Animal animal8 = animal7;
+    	
+    	Equipment e1 = new Equipment("Hammer/10,5.0,10.0,tool for hammering");
     
-    	//Test equals() method
+    	//Test equals() method's different if/else branches
+    	Assert.assertEquals(true, animal7.equals(animal8));
+    	Assert.assertEquals(false, animal8.equals(e1));
     	Assert.assertEquals(false, animal5.equals(animal6));
     	Assert.assertEquals(true, animal6.equals(animal7));
+    	
     }
 }
 

@@ -20,6 +20,7 @@ public class AnimalTest
         Assert.assertEquals("noname", animal1.getName());
         Assert.assertEquals(0, animal1.getHeight(), 0.01);
         Assert.assertEquals(0, animal1.getWeight(), 0.01);
+        
     }
     
     public void fullConstructorTest() throws AssertException
@@ -42,8 +43,20 @@ public class AnimalTest
     	Animal animal4 = new Animal();
     	
     	Assert.assertEquals("noname, a unknown-colored animal. 0.0 pounds, 0.0 inches\n", animal4.toString());
+    	
+    	//Test equals() method
+    	Assert.assertEquals(false, animal3.equals(animal4));
     }
 
-    // TODO: test full constructor, getters, and toString
+    public void equalsTest() throws AssertException
+    {
+    	Animal animal5 = new Animal("green", "bruce", 25.0, 79.4);
+    	Animal animal6 = new Animal();
+    	Animal animal7 = new Animal();
+    
+    	//Test equals() method
+    	Assert.assertEquals(false, animal5.equals(animal6));
+    	Assert.assertEquals(true, animal6.equals(animal7));
+    }
 }
 

@@ -24,9 +24,15 @@ public class EquipmentTest
     public void equalsTest() throws AssertException
     {
     	Equipment knife = new Equipment("Knife/5,5.0,25.0,tool for cutting");
+    	Equipment knifeClone = knife;
     	Equipment spoon = new Equipment("Spoon/1,2.0,5.0,tool for eating");
     	Equipment spoonToo = new Equipment("Spoon/1,2.0,5.0,tool for eating");
     	
+    	Animal a1 = new Animal("green", "snake", 15.0, 20.0);
+    	
+    	// Tests all branches of the equals() method
+    	Assert.assertEquals(true, knife.equals(knifeClone));
+    	Assert.assertEquals(false, knife.equals(a1));
     	Assert.assertEquals(false, knife.equals(spoon));
     	Assert.assertEquals(true, spoon.equals(spoonToo));
     }
